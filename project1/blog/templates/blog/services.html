@@ -1,0 +1,61 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+
+<div class="container">
+    <div class="homepage">
+        <div class="sidenav">
+            <a href="{% url 'about' %}">About</a>
+            <a href="#services">Services</a>
+
+            <button class="dropdown-btn">서울특별시
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="{% url 'seocho' %}">서초구</a>
+                <a href="#">강남구</a>
+                <a href="#">은평구</a>
+            </div>
+            <button class="dropdown-btn">경기도
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="{% url 'duckyang' %}">고양시 덕양구</a>
+                <a href="#">고양시 일산동구</a>
+                <a href="#">고양시 일산서구</a>
+            </div>
+            <button class="dropdown-btn">인천광역시
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">중구</a>
+                <a href="#">동구</a>
+                <a href="#">연수구</a>
+            </div>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>         
+    </div>
+    <div class="centerpage">
+        <div class="centerimg">
+            {% load static %}
+            <img src="{% static 'img/9.jpg' %}" alt="">
+        </div>
+        <div class="Title">
+             <div class="bigtitle">
+                 환영합니다.
+             </div>
+             <div class="smalltitle">
+                 헬맷 미착용 감지 서비스입니다.
+             </div>
+        </div>
+        <div class="content">
+            현재까지 이용 가능한 지역은 
+            서울특별시 서초구,
+            경기도 고양시 덕양구입니다.
+            
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

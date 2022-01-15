@@ -259,7 +259,7 @@ def sendsns(req,phonenumber):
     # client.subscribe(
     # TopicArn=topic_arn,
     # Protocol='sms',
-    # Endpoint="+82"+f"{phonenumber}"
+    # Endpoint="+820"+f"{phonenumber}"
     # )
     
     # client.publish(
@@ -270,7 +270,7 @@ def sendsns(req,phonenumber):
     PhoneNumber="+820"+f"{phonenumber}",
     Message="헬맷 미착용이 감지되었습니다."
     )
-
+    print("+820"+f"{phonenumber}")
     messages.success(req, '문자가 전송되었습니다.')
     Person = Driver.objects.filter(phonenumber__icontains=phonenumber)
     cnumber = Person[0]
@@ -321,6 +321,7 @@ def connect2(req, carnumber):
         PhoneNumber="+820"+f"{phonenumber}",
         Message="헬맷 미착용이 감지되었습니다."
         )
+        
         messages.success(req, '문자가 전송되었습니다.')
         CarNumber.objects.filter(carnumber=carnumber).delete()
 
